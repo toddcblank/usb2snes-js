@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="usb2snesjs.css"></link>
+		<script src="Queue.js"></script>
+		<script src="usb2snes.js"></script>
+		<script src="superMetroidItems.js"></script>
+		<script src="superMetroidHud.js"></script>
+		<script>
+			function getDataForInput() {
+				getData(document.getElementById("addressInput").value)
+			}
+		</script>
+	</head>
+	<body>
+		<div id="connStatus">Connection Status:</div>
+		<div id="availableConnections">
+			Select COM Port:<select id="activeConnection"></select>
+		</div>
+		<div>Address to Check (prints to console): <input id="addressInput" type="text"></input><button onclick="javascript:getDataForInput();">Get Data</button></div>
+		<div id="results"><div>
+		<div id="startStopPoll"><button id="pollToggle" onclick="togglePolling()">Start Polling</button></div>
+		<div id="items"></div>
+		<script>
+			for (i = 0; i < ALL_ITEMS.length; i++) {
+				var item = ALL_ITEMS[i];
+				var items = document.getElementById("items")
+				var itemNode = document.createElement("div");
+				itemNode.classList.add('location')
+				itemNode.id = "location_" + item.Address + "_" + item.Value
+				var nameNode = document.createTextNode(item.Name);
+				itemNode.appendChild(nameNode);
+				items.appendChild(itemNode);
+			}
+			
+		</script>
+	</body>
+</html>
