@@ -1,94 +1,55 @@
-progress {
-   /* Styling here */
-   display: inline-block;
-
-}
-
-progress:before {
-  content: attr(value);
-  font-size: 0.8em;
-  vertical-align: 0;
-  
-  /*Position text over the progress bar */
-  position:relative;
-  left:-28;
-}
-
-progress[value]::-webkit-progress-bar {
-  background-color: #eee;
-  border-radius: 2px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
-}
-progress[value]::-webkit-progress-value {
-  background-image:
-	   -webkit-linear-gradient(-45deg, 
-	                           transparent 33%, rgba(0, 0, 0, .1) 33%, 
-	                           rgba(0,0, 0, .1) 66%, transparent 66%),
-	   -webkit-linear-gradient(top, 
-	                           rgba(255, 255, 255, .25), 
-	                           rgba(0, 0, 0, .25)),
-	   -webkit-linear-gradient(left, #09c, #f44);
-
-    border-radius: 2px; 
-    background-size: 35px 20px, 100% 100%, 100% 100%;
-}
-
-.progress {
-  height: 1.5em;
-  width: 45%;
-  background-color: #c9c9c9;
-  position: relative;
-  display:inline-block;
-}
-.progress:before {
-  content: attr(value);
-  font-size: 0.8em;
-  position: absolute;
-  text-align: center;
-  top: 5px;
-  left: 0;
-  right: 0;
-}
-.progress .value {
-  background-color: #7cc4ff;
-  display: inline-block;
-  height: 100%;
-}
-
-.overall {
-	width: 50%;
-}
-
-.sub-area {
-	width: 40%;
-	display: inline-block;
-}
-
-.item-type-container {
-	width: 70%;
-	display: inline-block;
+.location.hidden {
+  display: none;
 }
 
 .location {
   color: red;
+  display: inline-block;
+  padding: 4px;
+  width: 24%;
 }
 
 .location.found {
   color: green;
 }
 
-h3 {
-	width: 30%;
-	display: inline-block;
+.location-container {
+  /*padding-left:10%;*/
+  /*width: 70%;*/
+  /*display:none;*/
+
 }
 
-label {
-	width: 30%;
-	display: inline-block;
+.location-subcontainer {
+  border: solid;
+  border-radius: 16px;
+  border-width: 1px;
+}
+
+.togglebuttons {
+}
+
+.spacer {
+  padding: 2px;
+}
+
+.info {
+  display: inline-block;
+  width: 100%;
+}
+
+.pollButton {
+  text-align: center;
+}
+
+.rightHud {
+  width: 60%;
+  display: inline-block;
+  vertical-align: top;
+
 }
 
 button {
-	/*width: 22px;*/
 	height: 22px;
 	display: inline-block;
 }

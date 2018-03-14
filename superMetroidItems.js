@@ -1,4 +1,6 @@
-
+/**
+Useful constants for SM item locations, memory addresses, routes, etc
+*/
 
 class SuperMetroidItem
 {
@@ -330,28 +332,3 @@ let ROUTE_100_EARLY_CROC = [
     SUPER_CRATERIA.id,
     MISSILES_DENTAL_PLAN.id,
 ];
-
-
-
-
-// public enum AREA
-// {
-//     Crateria,
-//     Brinstar,
-//     WreckedShip,
-//     Maridia,
-//     Norfair,
-//     Tourian
-// }
-
-// public enum ITEM_TYPE
-// {
-//     ENERGY_TANK,
-//     MISSILE,
-//     SUPER,
-//     RESERVE,
-//     POWER_BOMB,
-//     MAJOR
-// }
-
-
