@@ -31,7 +31,6 @@ socket.onmessage = function(event) {
   } else if (event.type == "message" && typeof event.data == "object") {
     //_probably_ binary data, updating status of an item.
     reader.readAsArrayBuffer(event.data)
-    waitingForResponse = false;
   }  
     
 };
@@ -59,12 +58,16 @@ function getData(address, fn) {
     waitingForResponse = true;
 
     if(fn != undefined) {
-        reader.onload = fn;
+        reader.onload = function() {
+            fn();        
+            waitingForResponse = false;
+        }
     } else {
         //by default just spit out the result to the console.
         reader.onload = function(){
             dataView = new DataView(reader.result)    
-            console.log(dataView.getUint8(0));
+            console.log(dataView.getUint8(0));            
+            waitingForResponse = false;
         }
     }
 
