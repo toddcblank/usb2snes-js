@@ -10,15 +10,12 @@ function checkForLocation(location, element) {
 		dataView = new DataView(reader.result);
 		result = dataView.getUint8(0)
 		found = (result & location.Value) > 0;
-		// console.log("Got " + found + " response (" + result + ") for item " + location.Name + " with address " + location.Address + ", " + location.Value)
-
-		
 
 		if(found) {
 			if (element.classList.contains("found")) {
 				return;
 			}
-			
+
 			element.classList.add("found")
 			incrementProgressBarForLocation(location);
 		} else {
@@ -36,16 +33,15 @@ function incrementProgressBarForLocation(location){
 					javascript:incrementProgressBar('crateriaEtanks', 'overallEtanks', 1);
 					break;	
 				case "RESERVE":
-					javascript:incrementProgressBar('crateriaMissiles', 'overallMissiles', 1);
 					break;	
 				case "SUPER":
-					javascript:incrementProgressBar('crateriaMissiles', 'overallMissiles', 1);
+					javascript:incrementProgressBar('crateriaSupers', 'overallSupers', 5);
 					break;	
 				case "MISSILE":
-					javascript:incrementProgressBar('crateriaEtanks', 'overallEtanks', 1);
+					javascript:incrementProgressBar('crateriaMissiles', 'overallMissiles', 5);
 					break;	
 				case "POWER_BOMB":
-					javascript:incrementProgressBar('crateriaPowerBombs', 'overallPowerBombs', 1);
+					javascript:incrementProgressBar('crateriaPowerBombs', 'overallPowerBombs', 5);
 					break;
 			}
 			break;
@@ -56,16 +52,15 @@ function incrementProgressBarForLocation(location){
 					javascript:incrementProgressBar('brinstarEtanks', 'overallEtanks', 1);
 					break;	
 				case "RESERVE":
-					javascript:incrementProgressBar('brinstarMissiles', 'overallMissiles', 1);
 					break;	
 				case "SUPER":
-					javascript:incrementProgressBar('brinstarMissiles', 'overallMissiles', 1);
+					javascript:incrementProgressBar('brinstarSupers', 'overallSupers', 5);
 					break;	
 				case "MISSILE":
-					javascript:incrementProgressBar('brinstarEtanks', 'overallEtanks', 1);
+					javascript:incrementProgressBar('brinstarMissiles', 'overallMissiles', 5);
 					break;	
 				case "POWER_BOMB":
-					javascript:incrementProgressBar('brinstarPowerBombs', 'overallPowerBombs', 1);
+					javascript:incrementProgressBar('brinstarPowerBombs', 'overallPowerBombs', 5);
 					break;
 			}
 			break;
@@ -76,16 +71,15 @@ function incrementProgressBarForLocation(location){
 					javascript:incrementProgressBar('wreckedShipEtanks', 'overallEtanks', 1);
 					break;	
 				case "RESERVE":
-					javascript:incrementProgressBar('wreckedShipMissiles', 'overallMissiles', 1);
 					break;	
 				case "SUPER":
-					javascript:incrementProgressBar('wreckedShipMissiles', 'overallMissiles', 1);
+					javascript:incrementProgressBar('wreckedShipSupers', 'overallSupers', 5);
 					break;	
 				case "MISSILE":
-					javascript:incrementProgressBar('wreckedShipEtanks', 'overallEtanks', 1);
+					javascript:incrementProgressBar('wreckedShipMissiles', 'overallMissiles', 5);
 					break;	
 				case "POWER_BOMB":
-					javascript:incrementProgressBar('wreckedShipPowerBombs', 'overallPowerBombs', 1);
+					javascript:incrementProgressBar('wreckedShipPowerBombs', 'overallPowerBombs', 5);
 					break;
 			}
 			break;
@@ -96,16 +90,15 @@ function incrementProgressBarForLocation(location){
 					javascript:incrementProgressBar('maridiaEtanks', 'overallEtanks', 1);
 					break;	
 				case "RESERVE":
-					javascript:incrementProgressBar('maridiaMissiles', 'overallMissiles', 1);
 					break;	
 				case "SUPER":
-					javascript:incrementProgressBar('maridiaMissiles', 'overallMissiles', 1);
+					javascript:incrementProgressBar('maridiaSupers', 'overallSupers', 5);
 					break;	
 				case "MISSILE":
-					javascript:incrementProgressBar('maridiaEtanks', 'overallEtanks', 1);
+					javascript:incrementProgressBar('maridiaMissiles', 'overallMissiles', 5);
 					break;	
 				case "POWER_BOMB":
-					javascript:incrementProgressBar('maridiaPowerBombs', 'overallPowerBombs', 1);
+					javascript:incrementProgressBar('maridiaPowerBombs', 'overallPowerBombs', 5);
 					break;
 			}
 			break;
@@ -116,16 +109,15 @@ function incrementProgressBarForLocation(location){
 					javascript:incrementProgressBar('norfairEtanks', 'overallEtanks', 1);
 					break;	
 				case "RESERVE":
-					javascript:incrementProgressBar('norfairMissiles', 'overallMissiles', 1);
 					break;	
 				case "SUPER":
-					javascript:incrementProgressBar('norfairMissiles', 'overallMissiles', 1);
+					javascript:incrementProgressBar('norfairSupers', 'overallSupers', 5);
 					break;	
 				case "MISSILE":
-					javascript:incrementProgressBar('norfairEtanks', 'overallEtanks', 1);
+					javascript:incrementProgressBar('norfairMissiles', 'overallMissiles', 5);
 					break;	
 				case "POWER_BOMB":
-					javascript:incrementProgressBar('norfairPowerBombs', 'overallPowerBombs', 1);
+					javascript:incrementProgressBar('norfairPowerBombs', 'overallPowerBombs', 5);
 					break;
 			}
 			break;
