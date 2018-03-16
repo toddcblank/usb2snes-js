@@ -8,6 +8,10 @@ socket.onopen = function(event) {
     getComOptions()    
 };
 
+socket.onclose = function (event) {
+    console.log("Closing...");
+}
+
 // Handle any errors that occur.
 socket.onerror = function(error) {
   console.log('Unable to connect (is usb2snes running?): ' + error.message);
@@ -66,7 +70,7 @@ function getData(address, fn) {
         //by default just spit out the result to the console.
         reader.onload = function(){
             dataView = new DataView(reader.result)    
-            console.log(dataView.getUint8(0));            
+            console.log(dataView.getUint16(0, true));            
             waitingForResponse = false;
         }
     }

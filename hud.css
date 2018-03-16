@@ -1,0 +1,155 @@
+.pollButton {
+  margin-bottom: 24px;  
+  display: inline-block;
+}
+
+.enemy {
+  border: solid;
+  text-align: center;
+  width: 90px;
+  border-width: 1px;
+  margin: 1;
+}
+
+.enemy-image {
+  height: 32px;
+  padding: 2px;
+  margin: auto;
+}
+
+.enemy-health {
+  text-align: center;
+  display: inline-block;
+}
+
+.dead {
+  display: none;
+}
+
+.halfway-dead {
+  background-color: yellow;
+}
+
+.overall-hud {
+   display: inline-flex;
+}
+
+.enemy-container {
+  display: inline-flex;
+  flex-direction: column;
+  flex-flow: row wrap;
+  margin: 1;
+  width:30%;
+  align-items: stretch;
+}
+
+.item {
+  flex-grow: 1; /* default 0 */
+}
+
+.locations-container {
+  flex-grow: 1;
+  /*border: solid;*/
+  /*border-width: 1px;*/
+  height: auto;
+  width: 30%;
+}
+
+#table {
+  flex-grow: 4
+  margin: auto;
+  text-align: center;
+}
+
+.misc-container {
+  display: flex; /* or inline-flex */
+  flex-direction: row;
+  flex-flow: row wrap;
+  margin: 0;
+  /*height: 70px;*/
+  width:30%;
+  align-items: stretch;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.item-percent {
+  text-align: center;
+  width: 90px;
+  margin: auto;  
+  border: solid;
+  border-width: 1px;
+  width: 200px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table, th {
+  border-bottom: solid;
+  border-width: 1px;
+}
+
+th {
+  height: 45px;
+  text-align: center;
+}
+
+td {
+  text-align: center;
+  width: 10%;
+
+}
+
+@-webkit-keyframes invalid {
+  from { background-color: red; }
+  to { background-color: inherit; }
+}
+@-moz-keyframes invalid {
+  from { background-color: red; }
+  to { background-color: inherit; }
+}
+@-o-keyframes invalid {
+  from { background-color: red; }
+  to { background-color: inherit; }
+}
+@keyframes invalid {
+  from { background-color: red; }
+  to { background-color: inherit; }
+}
+
+.updated-row {
+  -webkit-animation: invalid 1s 1;  /* Safari 4+ */
+  -moz-animation:    invalid 1s 1; /* Fx 5+ */
+  -o-animation:      invalid 1s 1; /* Opera 12+ */
+  animation:         invalid 1s 1; /* IE 10+ */
+}
+
+/*
+th.et-header {
+    content:url("images/items/Etank.png");  
+    margin:auto;  
+    display: block;
+}
+
+th.missile-header {
+    content:url("images/items/Missiles.png"); 
+    margin:auto;     
+    display: block;
+}
+
+th.super-header {
+    content:url("images/items/SuperMissiles.png");   
+    margin:auto;   
+    display: block;
+}
+
+th.pb-header {
+    content:url("images/items/Powerbomb.png");  
+    margin:auto;   
+    display: block; 
+}
+*/
+tr:hover {background-color: #f5f5f5;}
+tr:nth-child(even) {background-color: #f2f2f2;}

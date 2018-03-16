@@ -1,0 +1,281 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="hud.css"></link>
+		<link rel="stylesheet" type="text/css" href="enemies.css"></link>
+		<script src="Queue.js"></script>
+		<script src="usb2snes.js"></script>
+		<script src="superMetroidItems.js"></script>
+		<script src="superMetroidHud.js"></script>
+		<!-- // <script src="dab-tracker.js"></script> -->
+	</head>
+	<body>
+		
+		<!-- <div>Address to Check (prints to console): <input id="addressInput" type="text"></input><button onclick="javascript:getDataForInput();">Get Data</button></div> -->
+		<div id="results"><div>
+		<div id="startStopPoll" class="pollButton"><button id="pollToggle" onclick="togglePolling()">Start Polling</button></div>
+		<div id="pollItems" class="pollButton"><button id="pollItems" onclick="checkAllItems()">Manually Check Items Once</button></div>
+		<div id="autoPollItems" class="pollButton"><input type="checkbox" id="autopollItemsCheckbox">Autopoll Items (manual polling means more frequent enemy health updates)</input></div>
+
+		
+
+
+		<div id="smHud" class="overall-hud">
+			<div id="locationsCollected" class="locations-container">
+				<table>
+					<tr>
+							<th>Zone</th>	
+							<th><img src="images/items/Etank.png"></img></th>	
+							<th><img src="images/items/Missiles.png"></img></th>
+							<th><img src="images/items/Supermissiles.png"></img></th>
+							<th><img src="images/items/Powerbomb.png"></img></th> 
+							<th><img src="images/items/Reserves.png"></img></th> 
+					</tr>
+					<tr id="crateriaItemRow">		<td>Crateria</td>		<td id="crateriaEtank">0/2</td>		<td id="crateriaMissiles">0/40</td>		<td id="crateriaSupers">0/5</td>		<td id="crateriaPowerBombs">0/5</td>	<td id="crateriaReserve">N/A</td>	</tr>
+					<tr id="brinstarItemRow">		<td>Brinstar</td>		<td id="brinstarEtank">0/5</td>		<td id="brinstarMissiles">0/60</td>		<td id="brinstarSupers">0/15</td>		<td id="brinstarPowerBombs">0/25</td>	<td id="brinstarReserve">0/1</td>	</tr>
+					<tr id="wreckedshipItemRow">	<td>Wrecked Ship</td>	<td id="wreckedshipEtank">0/1</td>	<td id="wreckedshipMissiles">0/15</td>	<td id="wreckedshipSupers">0/10</td>	<td id="wreckedshipPowerBombs">N/A</td>	<td id="wreckedshipReserve">0/1</td>	</tr>
+					<tr id="maridiaItemRow">    	<td>Maridia</td>		<td id="maridiaEtank">0/2</td>		<td id="maridiaMissiles">0/40</td>		<td id="maridiaSupers">0/15</td>		<td id="maridiaPowerBombs">0/5</td>		<td id="maridiaReserve">0/1</td>		</tr>
+					<tr id="norfairItemRow">		<td>Norfair</td>		<td id="norfairEtank">0/4</td>		<td id="norfairMissiles">0/75</td>		<td id="norfairSupers">0/5</td>			<td id="norfairPowerBombs">0/15</td>	<td id="norfairReserve">0/1</td>	</tr>
+					<tr id="itemTotalRow">			<td>Total</td>			<td id="totalEtank">0/14</td>		<td id="totalMissiles">0/230</td>		<td id="totalSupers">0/50</td>			<td id="totalPowerBombs">0/50</td>		<td id="totalReserve">0/4</td>		</tr>
+				</table>
+			</div>
+
+			<div id="enemyInfo" class="enemy-container item">
+
+
+				<!-- enemy info -->
+				<div id="enemy0" class="enemy">
+					<!-- image -->
+					<div id="enemy0-image" class="enemy-unknown enemy-image"></div>
+					<!-- health -->
+					<div id="enemy0-health" class="enemy-health">?</div>
+				</div>
+
+				<div id="enemy1" class="enemy">
+					<!-- image -->
+					<div id="enemy1-image" class="enemy-unknown enemy-image"></div>
+					<!-- health -->
+					<div id="enemy1-health" class="enemy-health">?</div>
+				</div>
+
+				<div id="enemy2" class="enemy">
+					<!-- image -->
+					<div id="enemy2-image" class="enemy-unknown enemy-image"></div>
+					<!-- health -->
+					<div id="enemy2-health" class="enemy-health">?</div>
+				</div>
+
+				<div id="enemy3" class="enemy">
+					<!-- image -->
+					<div id="enemy3-image" class="enemy-unknown enemy-image"></div>
+					<!-- health -->
+					<div id="enemy3-health" class="enemy-health">?</div>
+				</div>
+
+				<div id="enemy4" class="enemy">
+					<!-- image -->
+					<div id="enemy4-image" class="enemy-unknown enemy-image"></div>
+					<!-- health -->
+					<div id="enemy4-health" class="enemy-health">?</div>
+				</div>
+
+				<div id="enemy5" class="enemy">
+					<!-- image -->
+					<div id="enemy5-image" class="enemy-unknown enemy-image"></div>
+					<!-- health -->
+					<div id="enemy5-health" class="enemy-health">?</div>
+				</div>
+
+				<div id="enemy6" class="enemy">
+					<!-- image -->
+					<div id="enemy6-image" class="enemy-unknown enemy-image"></div>
+					<!-- health -->
+					<div id="enemy6-health" class="enemy-health">?</div>
+				</div>
+
+				<div id="enemy7" class="enemy">
+					<!-- image -->
+					<div id="enemy7-image" class="enemy-unknown enemy-image"></div>
+					<!-- health -->
+					<div id="enemy7-health" class="enemy-health">?</div>
+				</div>
+
+				<div id="enemy8" class="enemy">
+					<!-- image -->
+					<div id="enemy8-image" class="enemy-unknown enemy-image"></div>
+					<!-- health -->
+					<div id="enemy8-health" class="enemy-health">?</div>
+				</div>
+
+				<div id="enemy9" class="enemy">
+					<!-- image -->
+					<div id="enemy9-image" class="enemy-unknown enemy-image"></div>
+					<!-- health -->
+					<div id="enemy9-health" class="enemy-health">?</div>
+				</div>
+
+				<div id="enemy10" class="enemy">
+					<!-- image -->
+					<div id="enemy10-image" class="enemy-unknown enemy-image"></div>
+					<!-- health -->
+					<div id="enemy10-health" class="enemy-health">?</div>
+				</div>
+
+				<div id="enemy11" class="enemy">
+					<!-- image -->
+					<div id="enemy11-image" class="enemy-unknown enemy-image"></div>
+					<!-- health -->
+					<div id="enemy11-health" class="enemy-health">?</div>
+				</div>
+
+				<div id="enemy12" class="enemy">
+					<!-- image -->
+					<div id="enemy12-image" class="enemy-unknown enemy-image"></div>
+					<!-- health -->
+					<div id="enemy12-health" class="enemy-health">?</div>
+				</div>
+
+				<div id="enemy13" class="enemy">
+					<!-- image -->
+					<div id="enemy13-image" class="enemy-unknown enemy-image"></div>
+					<!-- health -->
+					<div id="enemy13-health" class="enemy-health">?</div>
+				</div>
+
+				<div id="enemy14" class="enemy">
+					<!-- image -->
+					<div id="enemy14-image" class="enemy-unknown enemy-image"></div>
+					<!-- health -->
+					<div id="enemy14-health" class="enemy-health">?</div>
+				</div>
+
+				<div id="enemy15" class="enemy">
+					<!-- image -->
+					<div id="enemy15-image" class="enemy-unknown enemy-image"></div>
+					<!-- health -->
+					<div id="enemy15-health" class="enemy-health">?</div>
+				</div>
+
+				<div id="enemy16" class="enemy">
+					<!-- image -->
+					<div id="enemy16-image" class="enemy-unknown enemy-image"></div>
+					<!-- health -->
+					<div id="enemy16-health" class="enemy-health">?</div>
+				</div>
+
+				<div id="enemy17" class="enemy">
+					<!-- image -->
+					<div id="enemy17-image" class="enemy-unknown enemy-image"></div>
+					<!-- health -->
+					<div id="enemy17-health" class="enemy-health">?</div>
+				</div>
+
+				<div id="enemy18" class="enemy">
+					<!-- image -->
+					<div id="enemy18-image" class="enemy-unknown enemy-image"></div>
+					<!-- health -->
+					<div id="enemy18-health" class="enemy-health">?</div>
+				</div>
+
+				<div id="enemy19" class="enemy">
+					<!-- image -->
+					<div id="enemy19-image" class="enemy-unknown enemy-image"></div>
+					<!-- health -->
+					<div id="enemy19-health" class="enemy-health">?</div>
+				</div>
+
+				<div id="enemy20" class="enemy">
+					<!-- image -->
+					<div id="enemy20-image" class="enemy-unknown enemy-image"></div>
+					<!-- health -->
+					<div id="enemy20-health" class="enemy-health">?</div>
+				</div>
+
+				<div id="enemy21" class="enemy">
+					<!-- image -->
+					<div id="enemy21-image" class="enemy-unknown enemy-image"></div>
+					<!-- health -->
+					<div id="enemy21-health" class="enemy-health">?</div>
+				</div>
+
+				<div id="enemy22" class="enemy">
+					<!-- image -->
+					<div id="enemy22-image" class="enemy-unknown enemy-image"></div>
+					<!-- health -->
+					<div id="enemy22-health" class="enemy-health">?</div>
+				</div>
+
+				<div id="enemy23" class="enemy">
+					<!-- image -->
+					<div id="enemy23-image" class="enemy-unknown enemy-image"></div>
+					<!-- health -->
+					<div id="enemy23-health" class="enemy-health">?</div>
+				</div>
+
+				<div id="enemy24" class="enemy">
+					<!-- image -->
+					<div id="enemy24-image" class="enemy-unknown enemy-image"></div>
+					<!-- health -->
+					<div id="enemy24-health" class="enemy-health">?</div>
+				</div>
+
+				<div id="enemy25" class="enemy">
+					<!-- image -->
+					<div id="enemy25-image" class="enemy-unknown enemy-image"></div>
+					<!-- health -->
+					<div id="enemy25-health" class="enemy-health">?</div>
+				</div>
+
+				<div id="enemy26" class="enemy">
+					<!-- image -->
+					<div id="enemy26-image" class="enemy-unknown enemy-image"></div>
+					<!-- health -->
+					<div id="enemy26-health" class="enemy-health">?</div>
+				</div>
+
+				<div id="enemy27" class="enemy">
+					<!-- image -->
+					<div id="enemy27-image" class="enemy-unknown enemy-image"></div>
+					<!-- health -->
+					<div id="enemy27-health" class="enemy-health">?</div>
+				</div>
+
+				<div id="enemy28" class="enemy">
+					<!-- image -->
+					<div id="enemy28-image" class="enemy-unknown enemy-image"></div>
+					<!-- health -->
+					<div id="enemy28-health" class="enemy-health">?</div>
+				</div>
+
+				<div id="enemy29" class="enemy">
+					<!-- image -->
+					<div id="enemy29-image" class="enemy-unknown enemy-image"></div>
+					<!-- health -->
+					<div id="enemy29-health" class="enemy-health">?</div>
+				</div>
+
+				<div id="enemy30" class="enemy">
+					<!-- image -->
+					<div id="enemy30-image" class="enemy-unknown enemy-image"></div>
+					<!-- health -->
+					<div id="enemy30-health" class="enemy-health">?</div>
+				</div>
+
+				<div id="enemy31" class="enemy">
+					<!-- image -->
+					<div id="enemy31-image" class="enemy-unknown enemy-image"></div>
+					<!-- health -->
+					<div id="enemy31-health" class="enemy-health">?</div>
+				</div>
+
+				
+
+			</div>
+			<div id="" class="misc-container item">
+				<div id="reserveEnergy" class="item-percent">NRG in Reserves: 245</div>
+				<div id="ingameTime" class="item-percent">IGT: 00:00:00</div>
+				<div id="itemPercent" class="item-percent">Item Percentage: NYI</div>				
+				<div id="mapTiles" class="item-percent">Map Tiles: NYI</div>
+			</div>	
+		</div>		
+	</body>
+</html>
