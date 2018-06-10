@@ -62,6 +62,7 @@ function checkQueue() {
 		}
 		updateAllEnemyInfo();
 		updateIgt();
+		updateReserveLevel();
 	}
 
 	processQueue();	
